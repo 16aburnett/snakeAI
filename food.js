@@ -7,7 +7,7 @@
 function Food(){
 
     this.position;
-    this.w = 10;
+    this.w = 20;
 
     // pick random location 
     var x = floor(random(width / this.w));

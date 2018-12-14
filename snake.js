@@ -5,10 +5,10 @@
 
 function Snake(){
 
-    this.position = createVector(width / 2, height / 2);
-    this.w = 10;
+    this.position = createVector(width / 2 * this.w, height / 2 * this.w);
+    this.w = 20;
 
-    this.velocity = createVector(0, -10);
+    this.velocity = createVector(0, -this.w);
 
     this.direction = UP;
 
@@ -18,7 +18,7 @@ function Snake(){
     this.reset = function(){
 
         this.position = createVector(width / 2, height / 2);
-        this.velocity = createVector(0, -10);
+        this.velocity = createVector(0, -this.w);
         this.length = 0;
         this.tail = [];
 
