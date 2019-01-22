@@ -11,6 +11,7 @@ const LEFT = 3;
 var snake; 
 var food; 
 var bot; 
+var score;
 
 function setup(){
 
@@ -21,11 +22,14 @@ function setup(){
     snake = new Snake();
     food = new Food();
     bot = new Bot();
+    score = 0;
 
 }
 
 function draw(){
     background(21);
+
+    document.getElementById("score").innerHTML = score;
 
     bot.play();
 
@@ -33,9 +37,12 @@ function draw(){
     if (check == -1){
         gameOver();
     }
+
+    // snake eats food
     if(snake.position.equals(food.position)){
         snake.grow();
         food = new Food();
+        score += 10;
     }
 
     snake.show();
@@ -48,6 +55,7 @@ function gameOver(){
     console.log("resetting");
     snake = new Snake();
     food = new Food();
+    score=0;
 }
 
 function keyPressed(){

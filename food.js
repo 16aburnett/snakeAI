@@ -12,6 +12,7 @@ function Food(){
     // pick random location 
     var x = floor(random(width / this.w));
     var y = floor(random(height / this.w));
+    
 
     this.position = createVector(x * this.w, y * this.w);
 
